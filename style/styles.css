@@ -1,0 +1,760 @@
+/* ===== СИСТЕМА CSS ПЕРЕМЕННЫХ ===== */
+:root {
+  /* Цвета */
+  --color-scheme: light dark;
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-text-secondary: #666666;
+  --color-text-light: #999999;
+  --color-accent: #ff0000;
+  --color-primary: #000000;
+  --color-border: #dddddd;
+  --color-card-bg-start: #f8f8f8;
+  --color-card-bg-end: #e8e8e8;
+  --color-quote-bg: rgba(0, 0, 0, 0.8);
+  --color-skill-bg-start: #666666;
+  --color-skill-bg-end: #333333;
+  --color-skill-fill: #ffffff; /* ← твой новый цвет для шкал */
+
+  /* Типографика */
+  --font-size-base: 16px;
+  --font-size-h1: 28px;
+  --font-size-h2: 24px;
+  --font-size-h3: 20px;
+  --font-size-small: 14px;
+
+  /* Отступы */
+  --space-xs: 6px;
+  --space-s: 12px;
+  --space-m: 20px;
+  --space-l: 30px;
+  --space-xl: 40px;
+  --space-xxl: 50px;
+
+  /* Радиусы */
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-full: 25px;
+  --radius-circle: 50%;
+
+  /* Тени */
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.2);
+  --shadow-button: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* Переходы */
+  --transition-default: all 0.3s ease;
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+/* ===== ДОСТУПНОСТЬ: skip-link и фокус ===== */
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -100%;
+  z-index: 10000;
+  padding: 0.5rem 0.75rem;
+  background: #111;
+  color: #fff;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  inset-block-start: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+a,
+button,
+input,
+textarea {
+  outline-offset: 2px;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  position: relative;
+  font-size: var(--font-size-base);
+}
+
+/* ===== ФОНОВЫЕ ИЕРОГЛИФЫ ПО БОКАМ ===== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  background-image: url('../images/hieroglyphs.webp');
+  background-repeat: repeat-y;
+  background-size: 120px auto;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+body::before {
+  left: 0;
+  background-position: left top;
+}
+
+body::after {
+  right: 0;
+  background-position: right top;
+}
+
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  min-height: 100svh;
+    min-height: 100dvh;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== ШАПКА ===== */
+.header {
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(51, 51, 51, 0.9) 100%),
+    url('../images/header-bg.webp');
+  background-size: auto;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: var(--space-l);
+  padding-top: calc(var(--space-l) + env(safe-area-inset-top));
+  font-size: var(--font-size-h1);
+  font-weight: 300;
+  letter-spacing: 2px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav {
+  background:
+    linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(0, 0, 0, 0.85) 100%),
+    url('../images/nav-bg.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  padding: var(--space-m) 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav__item {
+  margin: 0;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  padding: var(--space-s) 25px;
+  border-radius: var(--radius-full);
+  transition: var(--transition-default);
+  font-weight: 500;
+  border: 1px solid #666;
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: #fff;
+}
+
+/* ===== ДОСТУПНОСТЬ: фокус для навигационных ссылок ===== */
+.nav__link:focus,
+.nav__link:focus-visible {
+  outline: none;
+  /* отключаем стандартный outline, чтобы не конфликтовал с border */
+  border-color: #ffffff;
+  /* яркий цвет, контрастный на тёмном фоне */
+  background-color: rgba(255, 255, 255, 0.15);
+  /* лёгкий подсвет фона */
+}
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.content {
+  padding: var(--space-xl);
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== ПРОФИЛЬ (БЛОК) ===== */
+.profile {
+  background: linear-gradient(135deg, var(--color-card-bg-start) 0%, var(--color-card-bg-end) 100%);
+  border-radius: var(--radius-l);
+  padding: var(--space-l);
+  margin-bottom: var(--space-xxl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.profile__title {
+  font-size: var(--font-size-h1);
+  color: var(--color-text);
+  margin: 0 0 var(--space-m) 0;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.profile__divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-text-light), transparent);
+  margin: 0 auto var(--space-m) auto;
+  width: 60%;
+}
+
+/* Контейнер для GIF и описания */
+.profile__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-l);
+  width: 100%;
+  margin-top: var(--space-m);
+}
+
+/* GIF занимает 100% ширины, пока описание скрыто */
+.profile__header-gif {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-s);
+  transition: width 0.4s ease, flex 0.4s ease;
+  flex: 1 1 100%;
+}
+
+.profile__header-gif img,
+.profile__header-gif video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+}
+
+/* Обертка описания — скрыта по умолчанию */
+.profile__details-wrapper {
+  display: none;
+  flex: 1 1 50%;
+  min-width: 250px;
+  animation: slideInRight 0.4s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Когда описание показано — GIF сужается до 50% */
+.profile--expanded .profile__header-gif {
+  flex: 1 1 50%;
+  max-width: none;
+  margin: 0;
+}
+
+.profile--expanded .profile__details-wrapper {
+  display: block;
+}
+
+/* Стили внутри описания */
+.profile__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+  text-align: center;
+}
+
+.profile__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  text-align: left;
+  width: 100%;
+}
+
+.profile__name {
+  font-size: var(--font-size-h2);
+  color: var(--color-text);
+  margin: 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.profile__description {
+  font-size: 18px;
+  color: var(--color-text);
+  margin: 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.profile__resume-link {
+  font-size: 16px;
+  color: red;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ===== АДАПТИВ ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+  .profile__row {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-m);
+  }
+
+  .profile__header-gif {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .profile--expanded .profile__header-gif {
+    flex: 1 1 100%;
+    margin: 0 auto;
+  }
+
+  .profile__details-wrapper {
+    min-width: auto;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ===== РАЗДЕЛ "ОБО МНЕ" ===== */
+.about-me {
+  background: linear-gradient(135deg, var(--color-card-bg-start) 0%, var(--color-card-bg-end) 100%);
+  padding: var(--space-m);
+  border-radius: var(--radius-m);
+  margin: var(--space-xl) 0;
+  border-left: 5px solid var(--color-primary);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  position: relative;
+}
+
+/* ===== ТЁМНОЕ ПОЛЕ ТОЛЬКО ВОКРУГ ЗАГОЛОВКА "ОБО МНЕ" ===== */
+.about-me-title-wrapper {
+  background:
+   /* Звезды поверх темного фона */
+    url('../images/about-me-overlay.png') center / 400px auto,
+    /* Темный полупрозрачный фон */
+    rgba(0, 0, 0, 1.0);  /* PNG с прозрачностью */
+  background-repeat: repeat;
+  background-position: center;
+  background-size: contain; /* или cover, или auto — смотри ниже */
+  padding: var(--space-m);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.about-me__title {
+  font-size: var(--font-size-h1);
+  color: white; /* белый текст */
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  /* Чёрная обводка через text-shadow — работает везде */
+  text-shadow:
+    -1px -5px 0 #000,
+     1px -5px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0px  1px 0 #000,
+     0px -1px 0 #000,
+     1px  5px 0 #000,
+    -1px  0px 0 #000;
+}
+
+/* ===== НАВЫКИ ===== */
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: var(--space-xl) 0;
+}
+
+.skills__item {
+  background: linear-gradient(135deg, var(--color-skill-bg-start) 0%, var(--color-skill-bg-end) 100%);
+  color: white;
+  padding: var(--space-s) 25px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-small);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-default);
+  border: 1px solid var(--color-primary);
+}
+
+.skills__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== ПРОЕКТЫ ===== */
+.projects {
+  margin-top: var(--space-xxl);
+}
+
+.projects__title {
+  font-size: var(--font-size-h1);
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: var(--space-l);
+  font-weight: 300;
+}
+
+.project {
+  background: var(--color-bg);
+  padding: var(--space-m);
+  margin: 20px 0;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-card);
+  border-left: 4px solid var(--color-primary);
+  transition: var(--transition-default);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.project:hover {
+  transform: translateX(5px);
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/splashes.WEBP');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.project__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.project__icon {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project__text {
+  flex: 1;
+}
+
+.project__title {
+  font-size: var(--font-size-h3);
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.project__desc {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(51, 51, 51, 0.9) 100%),
+    url('../images/footer-bg.webp');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: var(--space-l);
+  padding-bottom: calc(var(--space-l) + env(safe-area-inset-bottom));
+  margin-top: var(--space-xxl);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+}
+
+/* ===== УНИВЕРСАЛЬНАЯ КНОПКА ===== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: var(--space-s) 24px;
+  background: linear-gradient(135deg, var(--color-primary), #4d4d4d);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-default);
+  box-shadow: var(--shadow-button);
+  font-family: inherit;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.button:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.button:active,
+.nav__link:active,
+.news__link:active,
+.practice__link:active,
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ===== НАВЫКИ ВНУТРИ "ОБО МНЕ" ===== */
+.about-me__skills {
+    margin-top: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.skill-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-m);
+    width: 100%;
+}
+
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: var(--radius-s);
+    flex-shrink: 0;
+    align-self: stretch; /* растягивается по высоте контента */
+}
+
+.skill-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skill-name {
+    font-size: var(--font-size-h3);
+    color: var(--color-text);
+    margin: 0 0 var(--space-xs) 0;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.skill-bar {
+    height: 8px;
+    background-color: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-skill-fill));
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+.header__logo-text {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+.header__logo {
+  width: 40px;
+  height: auto;
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+}
+
+.header__name {
+  font-size: var(--font-size-h1);
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+
+
+/* Крупные цели на устройствах с pointer:coarse (мобильники) */
+@media (pointer: coarse) {
+
+  a,
+    button,
+    .nav__link {
+      min-height: 44px;
+      padding: 0.75rem 1rem;
+    }
+  }
+
+/* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+@media (max-width: 600px) {
+  .content {
+    padding: var(--space-m);
+  }
+
+  /* Горизонтальное меню с прокруткой */
+  .nav__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 12px;
+    gap: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav__link {
+    white-space: nowrap;
+    padding: 8px 16px;
+    min-width: fit-content;
+    border-radius: var(--radius-s);
+    font-size: 15px;
+  }
+
+  .profile__details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile__text {
+    align-items: center;
+  }
+
+  .project__content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-m);
+  }
+
+  .project__icon {
+    align-self: center;
+  }
+
+        .project__text {
+          text-align: center;
+        }
+  .header {
+    padding: 20px 16px;
+    font-size: 24px;
+  }
+
+  .footer {
+    padding: 20px 16px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .project__desc--center {
+    text-align: center !important;
+    margin: 0 auto;
+  }
+
+  .project__desc {
+    text-align: center;
+  }
+}

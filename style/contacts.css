@@ -1,0 +1,353 @@
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ КОНТАКТОВ (БЭМ + CSS-переменные) ===== */
+
+.contacts {
+  margin-bottom: var(--space-xl);
+}
+
+.contacts__title {
+  font-size: var(--font-size-h1);
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  font-weight: 300;
+}
+
+/* ===== ФОРМА ВНУТРИ КОНТАКТНОГО БЛОКА ===== */
+.contact--form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/form-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.contact__form {
+  width: 100%;
+  margin-top: var(--space-s);
+}
+
+.contact__form .form-group {
+  margin-bottom: var(--space-s);
+}
+
+.contact__form .form-group label {
+  display: block;
+  font-size: 16px;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contact__form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Заголовок "Напишите нам" — чёрный с белой обводкой */
+.contact--form .contact__label {
+  color: rgb(255, 255, 255);
+  text-shadow:
+    -1px -5px 0 rgb(0, 0, 0),
+     1px -5px 0 rgb(0, 0, 0),
+    -1px  1px 0 rgb(0, 0, 0),
+     1px  1px 0 rgb(0, 0, 0),
+     0px  1px 0 rgb(0, 0, 0),
+     0px -5px 0 rgb(0, 0, 0),
+     1px  5px 0 rgb(0, 0, 0),
+    -1px  5px 0 rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0 0 var(--space-s) 0;
+}
+
+/* Подписи полей формы (Имя, Email, Сообщение) — тоже чёрные с белой обводкой */
+.contact--form .contact__form .form-group label {
+  color: rgb(255, 255, 255);
+  text-shadow:
+    -1px -2px 0 rgb(0, 0, 0),
+     1px -1px 0 rgb(0, 0, 0),
+    -1px  2px 0 rgb(0, 0, 0),
+     1px  2px 0 rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* ===== ЗАГОЛОВОК С GIF (как в новостях) ===== */
+.contacts__header {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 120px;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  margin: 0 auto var(--space-xl) auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contacts__header-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contacts__header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--font-size-h1);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  z-index: 2;
+}
+
+/* ===== ОСНОВНОЙ КОНТАКТ (EMAIL, АДРЕС) ===== */
+.contact {
+  position: relative;
+  padding: var(--space-l);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--space-m);
+  border-left: 5px solid var(--color-primary);
+  border-right: 5px solid var(--color-primary);
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+/* Фон для email */
+.contact--email::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/email-bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Фон для адреса */
+.contact--address::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/address-bg.jpg'); /* ← твоя картинка для адреса */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.contact--form::after {
+  display: none;
+}
+
+.contact > * {
+  position: relative;
+  z-index: 2;
+}
+
+.contact__row {
+  display: flex;
+  align-items: center; 
+  gap: var(--space-m);
+  width: 100%;
+}
+
+.contact__icon {
+  width: 80px; 
+  height: 80px; 
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.contact__text {
+  flex: 1;
+  padding: var(--space-s) 0; 
+}
+
+.contact__label {
+  font-size: 22px; 
+  margin: 0 0 var(--space-s) 0; 
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.contact__value {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.9); 
+  line-height: 1.6;
+  font-size: 18px; 
+}
+
+/* ===== СЕТКА ДОПОЛНИТЕЛЬНЫХ КОНТАКТОВ ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-m);
+  margin: var(--space-xl) 0;
+}
+
+.contact-grid__item {
+  background:
+    url('../images/stars-bg.webp') repeat,
+    #000;
+  color: white; 
+  padding: var(--space-s);
+  border-radius: var(--radius-s);
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  background-size: auto; 
+}
+
+.contact-grid__item > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-grid__label {
+  font-size: var(--font-size-h3);
+  margin: 0 0 var(--space-xs) 0;
+  color: rgb(228, 228, 228); 
+  font-weight: 600;
+}
+
+.contact-grid__value {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5); 
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+}
+
+/* ===== КНОПКА НА СТРАНИЦЕ КОНТАКТОВ ===== */
+.contacts__button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: var(--space-xl) auto 0;
+}
+
+/* ===== ФОРМА ===== */
+.form-group {
+  margin-bottom: var(--space-m);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-s) var(--space-m);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: var(--transition-default);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.required { 
+  color: #ff1900;
+}
+
+.contact-grid__link { 
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-grid__link:hover { 
+  color: var(--color-accent);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 600px) {
+  .contact {
+    min-height: auto;
+    padding: var(--space-m);
+  }
+  
+  .contact__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact__icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--space-s);
+  }
+
+  .contact__label {
+    font-size: 20px;
+  }
+
+  .contact__value {
+    font-size: 16px;
+  }
+
+  .modal__actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

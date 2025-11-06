@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="description" content="Проекты">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Проекты — Портфолио</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/projects.css">
+</head>
+
+<body>
+    <!-- Ссылка для клавиатурной навигации -->
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <div class="page-container">
+        <header class="header">
+            <div fetchpriority="high" class="header__logo-text">
+                <video autoplay muted loop playsinline class="header__logo" poster="../images/logo.jpg">
+                    <source src="../images/logo.webm" type="video/webm">
+                </video>
+                <span class="header__name">Шаломеенко Анастасия</span>
+            </div>
+        </header>
+
+        <nav class="nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="projects.html">Проекты</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="diary.html">Дневник</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main" class="content">
+            <!-- Заголовок -->
+            <div class="practices__header">
+                <video autoplay muted loop playsinline poster="../images/practices-header-title.jpg"
+                    class="practices__header-gif">
+                    <source src="../images/practices-header-title.webm" type="video/webm">
+                    <img src="../images/practices-header-title.gif" alt="Заголовок контактов">
+                </video>
+                <h1 class="practices__header-title">Мои практики</h1>
+            </div>
+
+            <!-- Практика 1 -->
+            <div class="practice" style="background-image: url('../images/practice-bg1.webp');">
+                <div class="practice__content">
+                    <div class="practice__text">
+                        <h2 id="modal1-title" class="practice__title">myawesome-project</h2>
+                        <div class="practice__desc-box">
+                            <div class="practice__divider">
+                                <img src="../images/divider.gif" alt="" class="practice__divider-img">
+                                <img src="../images/divider.gif" alt="" class="practice__divider-img">
+                                <img src="../images/divider.gif" alt="" class="practice__divider-img">
+                            </div>
+                            <p class="practice__description">
+                                Во время этой практики я разрабатывала адаптивный сайт с использованием HTML, CSS и
+                                JavaScript. Особое
+                                внимание уделялось семантике, доступности и совместимости.
+                            </p>
+                        </div>
+                        <a href="#" class="practice__link modal-trigger" data-modal="modal1">Подробнее...</a>
+                    </div>
+                    <div class="practice__image">
+                        <img src="../images/practice1.webp" alt="Практика 1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Практика 2 -->
+            <div class="practice" style="background-image: url('../images/practice-bg2.webp');">
+                <div class="practice__content">
+                    <div class="practice__image">
+                        <img src="../images/practice2.webp" alt="Практика 2">
+                    </div>
+                    <div class="practice__text">
+                        <h2 id="modal2-title" class="practice__title">frontend-and-backend-practice</h2>
+                        <div class="practice__desc-box">
+                            <div class="practice__divider">
+                                <img src="../images/divider.gif" alt="" class="practice__divider-img">
+                                <img src="../images/divider.gif" alt="" class="practice__divider-img">
+                                <img src="../images/divider.gif" alt="" class="practice__divider-img">
+                            </div>
+                            <p class="practice__description">
+                                Создание многостраничного сайта-портфолио, построенного с использованием семантических
+                                HTML5-тегов и
+                                современных методов верстки на основе CSS Grid и Flexbox.
+                            </p>
+                        </div>
+                        <a href="#" class="practice__link modal-trigger" data-modal="modal2">Подробнее...</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">© 2025 Портфолио. Все права защищены.</footer>
+    </div>
+
+    <!-- Модальное окно 1 -->
+    <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" tabindex="-1">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть окно">&times;</button>
+
+            <div class="modal__frame-container">
+                <img src="../images/title-frame2.png" alt="Рамка названия" class="modal__frame-img">
+                <div class="modal__frame-content modal__frame-content--1">
+                    <h2 id="modal1-title" class="modal__project-title">myawesome-project</h2>
+                </div>
+            </div>
+
+            <!-- Кнопки управления -->
+            <div class="modal__controls">
+                <button class="modal__control-btn" data-content="squares" aria-label="Описание проекта">I</button>
+                <button class="modal__control-btn" data-content="links" aria-label="Ссылки">II</button>
+                <button class="modal__control-btn" data-content="coming" aria-label="Прочее">III</button>
+            </div>
+
+            <!-- Белая рамка (декоративный элемент) -->
+            <div class="modal__white-frame">
+                <img src="../images/глаза2.gif" alt="Декоративная рамка" class="modal__white-frame-img">
+            </div>
+
+            <!-- Контентные блоки -->
+            <div class="modal__content-section modal__content-squares">
+                <div class="modal__squares-container">
+                    <div class="modal__image-square">
+                        <img src="../images/photo-frame.png" alt="Рамка для фото" class="modal__square-img">
+                        <div class="modal__square-content modal__square-content--image">
+                            <img src="../images/eyes1.jpg" alt="Фото проекта" class="modal__square-photo">
+                        </div>
+                    </div>
+
+                    <div class="modal__description-square">
+                        <img src="../images/description-frame.png" alt="Квадратная рамка описания"
+                            class="modal__square-img">
+                        <div class="modal__square-content modal__square-content--1">
+                            <p class="modal__description-text" style="text-align: justify;">
+                                Во время этой практики я разрабатывала адаптивный сайт с использованием HTML, CSS и
+                                JavaScript. Особое внимание уделялось семантике.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__content-section modal__content-links">
+                <div class="modal__links-container">
+                    <a href="#" class="modal__link">github</a>
+                    <a href="#" class="modal__link">демо</a>
+                </div>
+            </div>
+
+            <div class="modal__content-section modal__content-coming">
+                <div class="modal__coming-soon">
+                    <p>Скоро будет...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 2 -->
+    <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" tabindex="-1">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть окно">&times;</button>
+
+            <div class="modal__frame-container">
+                <img src="../images/title-frame2.png" alt="Рамка названия" class="modal__frame-img">
+                <div class="modal__frame-content modal__frame-content--2">
+                    <h2 id="modal2-title" class="modal__project-title">front-and-back-practice</h2>
+                </div>
+            </div>
+
+            <!-- Кнопки управления -->
+            <div class="modal__controls">
+                <button class="modal__control-btn" data-content="squares" aria-label="Описание проекта">I</button>
+                <button class="modal__control-btn" data-content="links" aria-label="Ссылки на GitHub и демо">II</button>
+                <button class="modal__control-btn" data-content="coming"
+                    aria-label="Дополнительная информация">III</button>
+            </div>
+
+            <!-- Белая рамка (декоративный элемент) -->
+            <div class="modal__white-frame">
+                <img src="../images/глаза2.gif" alt="Декоративная рамка" class="modal__white-frame-img">
+            </div>
+
+            <!-- Контентные блоки -->
+            <div class="modal__content-section modal__content-squares">
+                <div class="modal__squares-container">
+                    <div class="modal__image-square">
+                        <img src="../images/photo-frame.png" alt="Рамка для фото" class="modal__square-img">
+                        <div class="modal__square-content modal__square-content--image">
+                            <img src="../images/eyes2.jpg" alt="Фото проекта" class="modal__square-photo">
+                        </div>
+                    </div>
+
+                    <div class="modal__description-square">
+                        <img src="../images/description-frame.png" alt="Квадратная рамка описания"
+                            class="modal__square-img">
+                        <div class="modal__square-content modal__square-content--2">
+                            <p class="modal__description-text">
+                                Создание сайта-портфолио, построенного с использованием семантических HTML5-тегов и
+                                современных методов верстки на основе CSS Grid.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__content-section modal__content-links">
+                <div class="modal__links-container">
+                    <a href="#" class="modal__link">github</a>
+                    <a href="#" class="modal__link">демо</a>
+                </div>
+            </div>
+
+            <div class="modal__content-section modal__content-coming">
+                <div class="modal__coming-soon">
+                    <p>Скоро будет...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const triggers = document.querySelectorAll('.modal-trigger');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.modal__close');
+
+            // Функция для сброса состояния модального окна
+            function resetModalState(modal) {
+                // Скрываем все контентные секции
+                const contentSections = modal.querySelectorAll('.modal__content-section');
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Снимаем активное состояние с кнопок
+                const controlButtons = modal.querySelectorAll('.modal__control-btn');
+                controlButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            }
+
+            function updateModalHeight(modal) {
+                const activeSection = modal.querySelector('.modal__content-section.active');
+                if (activeSection) {
+                    // Даем время на анимацию перед пересчетом
+                    setTimeout(() => {
+                        const content = modal.querySelector('.modal__content');
+                        const sectionHeight = activeSection.scrollHeight;
+
+                        // Автоматически прокручиваем к верху активной секции если нужно
+                        if (sectionHeight > 300) {
+                            content.style.maxHeight = 'none'; // Снимаем ограничение при необходимости
+                        }
+                    }, 50);
+                }
+            }
+
+            // Функция для обработки кликов по кнопкам управления
+            function handleControlButtonClick(button, modal) {
+                const contentType = button.getAttribute('data-content');
+                const contentSection = modal.querySelector(`.modal__content-${contentType}`);
+
+                // Если секция уже активна - скрываем её
+                if (contentSection.classList.contains('active')) {
+                    contentSection.classList.remove('active');
+                    button.classList.remove('active');
+                } else {
+                    // Скрываем все секции
+                    const allSections = modal.querySelectorAll('.modal__content-section');
+                    allSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    // Снимаем активность со всех кнопок
+                    const allButtons = modal.querySelectorAll('.modal__control-btn');
+                    allButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    // Показываем выбранную секцию и активируем кнопку
+                    contentSection.classList.add('active');
+                    button.classList.add('active');
+
+                    updateModalHeight(modal);
+                }
+            }
+
+            // Инициализация кнопок управления для каждого модального окна
+            modals.forEach(modal => {
+                const controlButtons = modal.querySelectorAll('.modal__control-btn');
+                controlButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        handleControlButtonClick(this, modal);
+                    });
+                });
+            });
+
+            // Обработчики для открытия модальных окон
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const modalId = this.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        // Сбрасываем состояние перед открытием
+                        resetModalState(modal);
+                        modal.classList.add('modal--open');
+
+                    }
+                });
+            });
+
+            // Обработчики для закрытия модальных окон
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('modal--open');
+                        // Сбрасываем состояние после закрытия
+                        setTimeout(() => resetModalState(modal), 300);
+                    }
+                });
+            });
+
+            // Закрытие по клику вне окна и по Escape
+            modals.forEach(modal => {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        this.classList.remove('modal--open');
+                        setTimeout(() => resetModalState(this), 300);
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if (modal.classList.contains('modal--open')) {
+                            modal.classList.remove('modal--open');
+                            setTimeout(() => resetModalState(modal), 300);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

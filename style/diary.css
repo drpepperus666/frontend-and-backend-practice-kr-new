@@ -1,0 +1,200 @@
+/* ===== СТИЛИ ДЛЯ УЧЕБНОГО ДНЕВНИКА ===== */
+
+/* Заголовок поверх GIF — как в news.html */
+.diary__header {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 120px;
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    margin: 0 auto var(--space-xl) auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.diary__header-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.diary__header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-h1);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    z-index: 2;
+}
+
+/* Общий контейнер записей */
+.diary__log {
+    background: url('../images/stars.webp') center / auto repeat, rgba(0, 0, 0, 0.9);
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    margin-bottom: var(--space-xl);
+    position: relative;
+}
+
+/* ===== КАРТОЧКА ЗАПИСИ (как в news) ===== */
+.diary__item {
+    background: var(--color-bg);
+    padding: var(--space-m);
+    margin: var(--space-m) 0;
+    border-radius: var(--radius-m);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition-default);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Чёрные границы */
+.diary__item::before,
+.diary__item::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+}
+
+.diary__item::before {
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-primary);
+}
+
+.diary__item::after {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--color-primary);
+}
+
+.diary__item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== ЗАГОЛОВОК ЗАПИСИ ===== */
+.diary__header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.diary__header-text {
+    flex: 1;
+}
+
+.diary__title {
+    font-size: 22px;
+    color: var(--color-text);
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.diary__meta {
+    font-size: var(--font-size-small);
+    color: #777;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ===== ИКОНКА ===== */
+.diary__icon {
+    width: 60px;
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: var(--radius-s);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+/* ===== РАЗДЕЛИТЕЛЬ ===== */
+.diary__divider {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 4px;
+    margin: 0 auto 20px auto;
+    opacity: 0.8;
+}
+
+/* ===== КОНТЕНТ ===== */
+.diary__content {
+    position: relative;
+    z-index: 1;
+}
+
+.diary__list {
+    color: #555;
+    line-height: 1.6;
+    padding-left: 20px;
+    margin: 0 0 15px 0;
+}
+
+.diary__list li {
+    margin-bottom: 8px;
+}
+
+.in-progress {
+    color: #ff0000;
+    font-style: italic;
+}
+
+/* ===== БЛОК "ТЕКУЩИЕ КУРСЫ" ===== */
+.about-me-title-wrapper {
+    background:
+        url('../images/curses-me-overlay.png') center / 400px auto,
+        rgba(0, 0, 0, 1.0);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.about-me__title {
+    font-size: var(--font-size-h1);
+    color: white;
+    margin: 0;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+/* Кнопка добавления записи */
+.diary__add-button {
+    display: block;
+    margin: var(--space-xl) auto 0 auto;
+    padding: var(--space-s) 30px;
+    font-size: 18px;
+}
+
+.diary__divider {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+    margin: 0 auto 20px auto;
+    border-radius: 4px;
+}

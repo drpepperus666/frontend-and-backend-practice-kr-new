@@ -1,0 +1,175 @@
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ НОВОСТЕЙ (БЭМ + CSS-переменные) ===== */
+
+.news {
+  margin-bottom: var(--space-xl);
+}
+
+/* ===== ЗАГОЛОВОК С GIF ===== */
+.news__header {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 120px;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  margin: 0 auto var(--space-xl) auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.news__header-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news__header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--font-size-h1);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  z-index: 2;
+}
+
+/* ===== КАРТОЧКА НОВОСТИ ===== */
+.news__item {
+  background: var(--color-bg);
+  padding: var(--space-m);
+  margin: var(--space-m) 0;
+  border-radius: var(--radius-m);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-default);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Чёрные границы — через псевдоэлементы */
+.news__item::before,
+.news__item::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+}
+
+.news__item::before {
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+.news__item::after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color-primary);
+}
+
+/* Брызги на фоне */
+.news__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/splashes.WEBP');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.news__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== ЗАГОЛОВОК НОВОСТИ ===== */
+.news__header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.news__header-text {
+  flex: 1;
+}
+
+.news__title {
+  font-size: 22px;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.news__meta {
+  font-size: var(--font-size-small);
+  color: #777;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===== ИКОНКА НОВОСТИ ===== */
+.news__icon {
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+/* ===== РАЗДЕЛИТЕЛЬ ===== */
+.news__divider {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 4px;
+  margin: 0 auto 20px auto;
+  opacity: 0.8;
+}
+
+/* ===== ТЕКСТ НОВОСТИ ===== */
+.news__content {
+  position: relative;
+  z-index: 1;
+}
+
+.news__text {
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+.news__link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.news__link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.news__link:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

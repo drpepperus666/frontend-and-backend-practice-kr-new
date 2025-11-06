@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta name="description" content="Контакты">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Контакты — Портфолио</title>
+  <link rel="stylesheet" href="../style/styles.css">
+  <link rel="stylesheet" href="../style/contacts.css">
+</head>
+
+<body>
+  <!-- Ссылка для клавиатурной навигации -->
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <div class="page-container">
+    <header class="header">
+      <div fetchpriority="high" class="header__logo-text">
+        <video autoplay muted loop playsinline class="header__logo" poster="../images/logo.jpg">
+          <source src="../images/logo.webm" type="video/webm">
+        </video>
+        <span class="header__name">Шаломеенко Анастасия</span>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="../index.html">Главная</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="projects.html">Проекты</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="diary.html">Дневник</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav__link--active" href="contacts.html">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main" class="content">
+      <div class="contacts">
+        <!-- Заголовок с GIF -->
+        <div class="contacts__header">
+          <video autoplay muted loop playsinline poster="../images/contacts-header.jpg" class="contacts__header-gif">
+            <source src="../images/contacts-header.webm" type="video/webm">
+            <img src="../images/contacts-header.gif" alt="Заголовок контактов">
+          </video>
+          <h1 class="contacts__header-title">Наши контакты</h1>
+        </div>
+
+        <!-- Контактная форма -->
+        <div class="contact contact--form">
+          <div class="contact__row">
+            <div class="contact__text">
+              <h2 class="contact__label"><b>НАПИШИТЕ НАМ</b></h2>
+              <form id="quickContactForm" class="contact__form">
+                <div class="form-group">
+                  <label for="quickName">Имя <span class="required">*</span></label>
+                  <input type="text" id="quickName" name="name" required placeholder="Ваше имя">
+                </div>
+                <div class="form-group">
+                  <label for="quickEmail">Email <span class="required">*</span></label>
+                  <input type="email" id="quickEmail" name="email" required placeholder="example@mail.ru">
+                </div>
+                <div class="form-group">
+                  <label for="quickMessage">Сообщение <span class="required">*</span></label>
+                  <textarea id="quickMessage" name="message" required placeholder="Ваше сообщение..."></textarea>
+                </div>
+                <button type="submit" class="button" style="width: 100%; max-width: 200px; margin-top: 12px;">
+                  Отправить
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блок с 3 карточками -->
+        <div class="contact-grid">
+          <div class="contact-grid__item">
+            <p class="contact-grid__label">⫘⫘⫘⫘⫘⫘</p>
+            <br>
+            <h3 class="contact-grid__label">Электронная почта</h3>
+            <p class="contact-grid__value">obikaka159@gmail.com</p>
+            <br>
+            <p class="contact-grid__label">⫘⫘⫘⫘⫘⫘</p>
+          </div>
+          <div class="contact-grid__item">
+            <p class="contact-grid__label">⫘⫘⫘⫘⫘⫘</p>
+            <br>
+            <h3 class="contact-grid__label">GitHub</h3>
+            <a href="https://github.com/drpepperus666" target="_blank" rel="noopener"
+              class="contact-grid__link">drpepperus666</a>
+            <br><br>
+            <p class="contact-grid__label">⫘⫘⫘⫘⫘⫘</p>
+          </div>
+          <div class="contact-grid__item">
+            <p class="contact-grid__label">⫘⫘⫘⫘⫘⫘</p>
+            <br>
+            <h3 class="contact-grid__label">Город, Страна</h3>
+            <p class="contact-grid__value">Москва, РФ</p>
+            <br>
+            <p class="contact-grid__label">⫘⫘⫘⫘⫘⫘</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">© 2025 Контакты</footer>
+  </div>
+
+  <script>
+    document.getElementById('quickContactForm')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+      }
+      const data = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value
+      };
+      console.log('Быстрая форма:', data);
+      alert('Спасибо! Ваше сообщение отправлено.');
+      this.reset();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="description" content="Дневник">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Учебный дневник — Портфолио</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/diary.css">
+</head>
+
+<body>
+    <!-- Ссылка для клавиатурной навигации -->
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <div class="page-container">
+        <header class="header">
+            <div fetchpriority="high" class="header__logo-text">
+                <video autoplay muted loop playsinline class="header__logo" poster="../images/logo.jpg">
+                    <source src="../images/logo.webm" type="video/webm">
+                </video>
+                <span class="header__name">Шаломеенко Анастасия</span>
+            </div>
+        </header>
+
+        <nav class="nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="projects.html">Проекты</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="diary.html">Дневник</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main" class="content">
+            <!-- Заголовок поверх  -->
+            <div class="diary__header">
+                <video autoplay muted loop playsinline poster="../images/practices-header.jpg"
+                    class="diary__header-gif">
+                    <source src="../images/practices-header.webm" type="video/webm">
+                </video>
+                <h1 class="diary__header-title">Мой учебный прогресс</h1>
+            </div>
+
+            <!-- Журнал событий -->
+            <div class="diary__log">
+
+                <!-- Запись 2 -->
+                <article class="diary__item">
+                    <div class="diary__header-row">
+                        <div class="diary__header-text">
+                            <h3 class="diary__title">6 июня - Очень важная новость о прогрессе</h3>
+                            <p class="diary__meta">ОЧЕНЬ ВАЖНЫЙ ПРОГРЕСС:</p>
+                        </div>
+                        <video autoplay muted loop playsinline class="diary__icon"
+                            poster="../images/progress-icon1.jpg">
+                            <source src="../images/progress-icon1.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="diary__divider"></div>
+                    <div class="diary__content">
+                        <p>Невероятно важная новость об одной чрезвычайно важной новости, в которой говорится об
+                            актуальных на сегодняшний день важных новостях, связанных с последними важными новостями,
+                            которые, в свою очередь, напрямую влияют на глобальное понимание важности важных новостей,
+                            озвученных ранее в важных новостях, и подтверждают, что без сомнения — это самая важная
+                            новость месяца.</p>
+                    </div>
+                </article>
+
+                <!-- Запись 3 -->
+                <article class="diary__item">
+                    <div class="diary__header-row">
+                        <div class="diary__header-text">
+                            <h3 class="diary__title">6 июня - Не очень важная новость о прогрессе <span
+                                    class="in-progress">in progress</span></h3>
+                            <p class="diary__meta">НЕ ОЧЕНЬ ВАЖНЫЙ ПРОГРЕСС:</p>
+                        </div>
+                        <video autoplay muted loop playsinline class="diary__icon"
+                            poster="../images/progress-icon2.jpg">
+                            <source src="../images/progress-icon2.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="diary__divider"></div>
+                    <div class="diary__content">
+                        <p>Не очень важная новость об одной чрезвычайно не очень важной новости, в которой говорится об
+                            актуальных на сегодняшний день не очень важных новостях, связанных с последними не очень
+                            важными новостями, которые, в свою очередь, напрямую влияют на глобальное понимание важности
+                            не очень важных новостей, озвученных ранее в не очень важных новостях, и подтверждают, что
+                            без сомнения — это не очень важная новость месяца.</p>
+                    </div>
+                </article>
+
+                <!-- Запись 4 -->
+                <article class="diary__item">
+                    <div class="diary__header-row">
+                        <div class="diary__header-text">
+                            <h3 class="diary__title">6 июня - Неважная новость о прогрессе <span class="in-progress">in
+                                    progress</span></h3>
+                            <p class="diary__meta">НЕВАЖНЫЙ ПРОГРЕСС:</p>
+                        </div>
+                        <video autoplay muted loop playsinline class="diary__icon"
+                            poster="../images/progress-icon3.jpg">
+                            <source src="../images/progress-icon3.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="diary__divider"></div>
+                    <div class="diary__content">
+                        <p>Неважная новость об одной чрезвычайно неважной новости, в которой говорится об актуальных на
+                            сегодняшний день неважных новостях, связанных с последними неважными новостями, которые, в
+                            свою очередь, напрямую влияют на глобальное понимание важности неважных новостей, озвученных
+                            ранее в неважных новостях, и подтверждают, что без сомнения — это самая неважная новость
+                            месяца.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Блок "Текущие курсы" -->
+            <div class="about-me">
+                <div class="about-me-title-wrapper">
+                    <h2 class="about-me__title">ТЕКУЩИЕ КУРСЫ</h2>
+                </div>
+
+                <div class="about-me__skills">
+                    <div class="skill-item">
+                        <img src="../images/skills-icon.gif" alt="web" class="skill-icon">
+                        <div class="skill-info">
+                            <div class="skill-name">Веб-разработка</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <img src="../images/skills-icon.gif" alt="jss" class="skill-icon">
+                        <div class="skill-info">
+                            <div class="skill-name">Javascript</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <img src="../images/skills-icon.gif" alt="react" class="skill-icon">
+                        <div class="skill-info">
+                            <div class="skill-name">React</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопка "Добавить запись" -->
+            <button class="button diary__add-button">Добавить запись</button>
+        </main>
+
+        <footer class="footer">© 2025 Контакты</footer>
+    </div>
+</body>
+
+</html>

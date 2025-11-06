@@ -1,0 +1,22 @@
+{
+  "name": "frontend-and-backend-practice-kr",
+  "version": "1.0.0",
+  "description": "https://drpepperus666.github.io/frontend-and-backend-practice-kr/\r # Веб-сайт студента-разработчика",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drpepperus666/frontend-and-backend-practice-kr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drpepperus666/frontend-and-backend-practice-kr/issues"
+  },
+  "homepage": "https://github.com/drpepperus666/frontend-and-backend-practice-kr#readme",
+  "devDependencies": {
+    "vite": "^7.1.12"
+  }
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="description" content="Портфолио">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Веб-сайт студента-разработчика</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+    <!-- Ссылка для клавиатурной навигации -->
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <div class="page-container">
+        <header class="header">
+            <div class="header__logo-text">
+                <video fetchpriority=high autoplay muted loop playsinline class="header__logo" poster="images/logo.jpg">
+                    <source src="images/logo.webm" type="video/webm">
+                </video>
+                <span class="header__name">Шаломеенко Анастасия</span>
+            </div>
+        </header>
+
+        <nav class="nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="index.html" aria-current="page">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/projects.html">Проекты</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/diary.html">Дневник</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main" class="content">
+            <!-- Профиль -->
+            <div class="profile" id="profile">
+                <h1 class="profile__title">Информация об авторе</h1>
+                <div class="profile__divider"></div>
+
+                <div class="profile__row">
+                    <div class="profile__header-gif">
+                        <video fetchpriority="high" autoplay muted loop playsinline poster="images/twitter-header.jpg"
+                            class="animated-banner">
+                            <source src="images/twitter-header.webm" type="video/webm">
+                            <img src="images/twitter-header.gif" alt="Анимированный баннер">
+                        </video>
+                    </div>
+                    <div class="profile__details-wrapper">
+                        <div class="profile__details">
+                            <div class="profile__text">
+                                <p class="profile__description">Я студентка группы ЭФБО-04-24 Института перспективных
+                                    технологий и индустриального программирования, обучающаяся по направлению
+                                    «фуллстек-разработка».</p>
+                                <br>
+                                <a href="assets/resume.pdf" download="resume.pdf" class="profile__resume-link">[ Скачать
+                                    резюме ]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навыки -->
+            <div class="about-me">
+                <div class="about-me-title-wrapper">
+                    <h2 class="about-me__title">МОИ НАВЫКИ</h2>
+                </div>
+
+                <div class="about-me__skills">
+                    <div class="skill-item">
+                        <img src="images/skills-icon.gif" alt="HTML" class="skill-icon">
+                        <div class="skill-info">
+                            <div class="skill-name">HTML</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <img src="images/skills-icon.gif" alt="CSS" class="skill-icon">
+                        <div class="skill-info">
+                            <div class="skill-name">CSS</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <img src="images/skills-icon.gif" alt="JavaScript" class="skill-icon">
+                        <div class="skill-info">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <img src="images/skills-icon.gif" alt="Энергетики" class="skill-icon">
+                        <div class="skill-info">
+                            <div class="skill-name">Мастер по распитию энергетиков</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Проекты -->
+            <div class="projects">
+                <h2 class="projects__title">Лучшие проекты</h2>
+
+                <div class="project">
+                    <div class="project__content">
+                        <div class="project__icon">
+                            <img src="images/experience1.webp" width="140" height="140" alt="Проект 1">
+                        </div>
+                        <div class="project__text">
+                            <h3 class="project__title">Проект 1</h3>
+                            <p class="project__desc">+ ⁺ ✦ ´ ¸*+ ⁺ ✦ ´ ¸*+ ⁺ ✦ ´ ¸*</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project__content">
+                        <div class="project__icon">
+                            <img src="images/experience2.webp" width="140" height="140" alt="Проект 2">
+                        </div>
+                        <div class="project__text">
+                            <h3 class="project__title">Проект 2</h3>
+                            <p class="project__desc">✦ — ‧₊˚✦ — ‧₊˚✦ — ‧₊˚✦ — ‧₊˚✦</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project__content">
+                        <div class="project__icon">
+                            <img src="images/experience3.webp" width="140" height="140" alt="Проект 3">
+                        </div>
+                        <div class="project__text">
+                            <h3 class="project__title">Проект 3</h3>
+                            <p class="project__desc">ˏˋ°•*⁀➷ ˋ ♡ˏˋ°•*⁀➷ ˋ ♡ˏˋ°•*⁀➷ ˋ ♡</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">© 2025 Контакты</footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const profile = document.getElementById('profile');
+            const title = profile.querySelector('.profile__title');
+            const gifContainer = profile.querySelector('.profile__header-gif');
+
+            const toggleExpanded = () => {
+                profile.classList.toggle('profile--expanded');
+            };
+
+            title.addEventListener('click', toggleExpanded);
+            gifContainer.addEventListener('click', toggleExpanded);
+        });
+    </script>
+</body>
+
+</html>
