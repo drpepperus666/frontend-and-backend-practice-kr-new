@@ -1,4 +1,4 @@
-[https://drpepperus666.github.io/frontend-and-backend-practice-kr/
+https://drpepperus666.github.io/frontend-and-backend-practice-kr-new/
 # Веб-сайт студента-разработчика
 
 Персональный веб-сайт-портфолио студентки, обучающейся по направлению "фуллстек-разработка".
